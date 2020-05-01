@@ -2,7 +2,7 @@
 
 :root {
 --dark-blue: hsl(233, 26%, 24%);
---lime-green: hsl(136, 95%, 26%);
+--lime-green: hsl(136, 65%, 51%);
 --bright-cyan: hsl(192, 70%, 51%);
 /* Neutral colors */
 --grayish-blue: hsl(233, 8%, 62%);
@@ -57,6 +57,9 @@ nav ul li a {
     position: relative;
     cursor: pointer;
 }
+ul li a {
+    font-size: 15px;
+}
 .nav-link:hover::after {
     content: "";
     position: absolute;
@@ -70,10 +73,12 @@ nav ul li a {
 button {
     color: var(--white);
     background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
-    padding: 15px 32px;
+    padding: 15px 34px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 400;
 }
 button:hover {
     outline: none;
@@ -81,12 +86,12 @@ button:hover {
 }
 .hero {
     width: 100%;
-    height: 665px;
+    height: 655px;
     background-color: var(--very-light-gray);
     position: relative;
 }
 .hero-text {
-    margin: 175px 0 0 165px;
+    margin: 172px 0 0 165px;
     width: 31%;
 }
 .hero h1 {
@@ -116,7 +121,7 @@ header::before {
     height: 100%;
     background: url("./images/bg-intro-desktop.svg") right no-repeat;
     position: absolute;
-    right: -500px;
+    right: -475px;
     z-index: 1;
 }
 p {
@@ -127,6 +132,9 @@ p, nav ul li a, small {
 }
 h1, h2, h3, h4 {
     color: var(--dark-blue);
+}
+h2,h3,h4 {
+    font-weight: 300;
 }
 .why-easybank {
     background-color: var(--light-grayish-blue);
@@ -152,9 +160,6 @@ h1, h2, h3, h4 {
 .container-card h3 {
     margin: 40px 0 30px;
     font-size: 25px;
-}
-.section-container h3 {
-    margin-bottom: 55px;
 }
 .articles {
     background-color: var(--very-light-gray);
@@ -182,6 +187,7 @@ h1, h2, h3, h4 {
 }
 footer {
     background-color: var(--dark-blue);
+    position: relative;
 }
 footer a {
     color: var(--light-grayish-blue);
@@ -221,10 +227,16 @@ footer li {
     color: var(--grayish-blue);
 }
 .attribution { 
-    font-size: 15px;
-    text-align: center;
+    font-size: 12px;
     background-color: var(--dark-blue); 
     color: var(--white);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
  .attribution a { 
      color: var(--grayish-blue);
