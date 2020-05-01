@@ -22,43 +22,42 @@ html, body {
     font-family: 'Public Sans', sans-serif;
     overflow-x: hidden;
 }
-header {
+header, nav, .navbar, .nav-link, .hero, footer {
     position: relative;
+}
+.footer-container, .navbar, .section-container {
+    width: 90%;
+    max-width: 1110px;
+    margin: 0 auto;
 }
 nav {
     background-color: white;
-    position: relative;
     z-index: 3;
 }
-.mobile-toggle {
+.mobile-toggle, #nav-background {
     display: none;
 }
-.navbar, .hero{
+.navbar, .hero {
     display: flex;
     justify-content: space-between;
 }
 .navbar {
     align-items: center;
-    width: 90%;
-    max-width: 1110px;
-    margin: 0 auto;
     height: 80px;
     background-color: var(--white);
-    position: relative;
     z-index: 3;
 }
-nav ul li {
+.navbar ul li {
     list-style-type: none;
     display: inline-block;
 }
-nav ul li a {
-    margin-left: 30px;
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-}
 ul li a {
     font-size: 15px;
+}
+.nav-link {
+    margin-left: 30px;
+    text-decoration: none;
+    cursor: pointer;
 }
 .nav-link:hover::after {
     content: "";
@@ -69,7 +68,6 @@ ul li a {
     height: 3px;
     background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
 }
-
 button {
     color: var(--white);
     background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
@@ -88,7 +86,6 @@ button:hover {
     width: 100%;
     height: 655px;
     background-color: var(--very-light-gray);
-    position: relative;
 }
 .hero-text {
     margin: 170px 0 0 165px;
@@ -109,9 +106,10 @@ button:hover {
     width: 44%;
     overflow-x: hidden;
 }
-
-#desktop {
+#desktop, header::before, .attribution {
     position: absolute;
+}
+#desktop {
     top: -120px;
     z-index: 2;
 }
@@ -121,14 +119,13 @@ header::before {
     height: 100%;
     background: url("./images/bg-intro-desktop.svg") right no-repeat;
     background-size: cover;
-    position: absolute;
     right: -45%;
     z-index: 1;
 }
 p {
     line-height: 150%;
 }
-p, nav ul li a, small {
+p, .nav-link, small {
     color: var(--grayish-blue);
 }
 h1, h2, h3, h4 {
@@ -141,12 +138,9 @@ h2,h3,h4 {
     background-color: var(--light-grayish-blue);
 }
 .section-container {
-    width: 90%;
-    max-width: 1110px;
-    margin: 0 auto;
     padding: 100px 0;
 }
-.section-container > h2 {
+.section-container h2 {
     margin-bottom: 30px;
     font-size: 40px;
 }
@@ -160,7 +154,7 @@ h2,h3,h4 {
 }
 .container-card h3 {
     margin: 40px 0 30px;
-    font-size: 25px;
+    font-size: 24px;
 }
 .container-card p {
     font-size: 16px;
@@ -168,33 +162,38 @@ h2,h3,h4 {
 .section-articles {
     padding: 90px 0 80px;
 }
+.section-articles h2 {
+    margin-bottom: 50px;
+}
 .articles {
     background-color: var(--very-light-gray);
 }
 .articles-container {
     background-color: var(--white);
-}
-.container-text {
-    width: 76%;
-    margin: 30px auto 25px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .articles-container img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    display: block;
 }
-.articles-container h4 {
+.container-text {
+    width: 76%;
+    margin: 25px auto;
+}
+.container-text h4 {
     margin: 12px 0;
-    font-size: 18px;
+    font-size: 15px;
 }
 .container-text p {
-    font-size: 12px;
+    font-size: 11px;
 }
 .container-text small {
-    font-size: 10px;
+    font-size: 9px;
 }
 footer {
     background-color: var(--dark-blue);
-    position: relative;
 }
 footer a {
     color: var(--light-grayish-blue);
@@ -203,35 +202,37 @@ footer a {
 footer li {
     list-style-type: none;
 }
-.footer-container {
+.footer-container, .footer-first, .footer-first > ul,
+ .footer-second ul {
     display: flex;
     justify-content: space-between;
+}
+.footer-container {
     align-items: center;
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
     padding: 48px 0;
 }
 .social-media-icons li {
     display: inline-block;
 }
 .footer-first {
-    display: flex; 
-    justify-content: space-between;
     width: 50%;
 }
 .footer-second ul, .footer-first > ul {
     height: 95px;
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
-
 .footer-second ul {
     align-items: flex-end;
 }
 .copyright {
     color: var(--grayish-blue);
+}
+.footer-first li a:hover, .container-text h4:hover {
+    cursor: pointer;
+    color: var(--lime-green);
+}
+.social-media-icons li img:hover {
+    filter: invert(26%) sepia(90%) saturate(1071%) hue-rotate(106deg) brightness(107%) contrast(98%);
 }
 .attribution { 
     font-size: 12px;
@@ -248,14 +249,6 @@ footer li {
  .attribution a { 
      color: var(--grayish-blue);
 }
-.footer-first li a:hover, .container-text h4:hover {
-    cursor: pointer;
-    color: var(--lime-green);
-}
-.social-media-icons li img:hover {
-    filter: invert(26%) sepia(90%) saturate(1071%) hue-rotate(106deg) brightness(107%) contrast(98%);
-}
-
 
 @media screen and (max-width: 1350px) {
     .hero-text {
@@ -268,13 +261,16 @@ footer li {
     }
 }
 @media screen and (max-width: 850px) {
+    .navbar button {
+        display: none;
+    }
     header::before {
-        right: -55%;
+        right: -59%;
     }
     .hero-text {
         width: 40%;
     }
-   .section-container > h2 {
+   .section-container h2 {
        font-size: 30px;
    }
    .container {
@@ -314,13 +310,6 @@ footer li {
    .social-media-icons li {
        margin: 0 10px;
    }
-   .footer-first li:hover, .container-text h4:hover {
-    cursor: pointer;
-    color: var(--lime-green);
-}
-    .social-media-icons li img:hover {
-    filter: invert(26%) sepia(90%) saturate(1071%) hue-rotate(106deg) brightness(107%) contrast(98%);
-}
 }
 @media screen and (max-width: 660px) {
     .hero-text h1 {
@@ -333,7 +322,6 @@ footer li {
         display: none;
    } 
     header::before {
-        display: unset;
         background: url("./images/bg-intro-mobile.svg") top right no-repeat;
         top: 0;
         right: 0;
@@ -367,18 +355,20 @@ footer li {
         left: 10%;
         top: -150px;
     }
-    .navbar ul {
-        opacity: 0;
+    nav ul {
         position: fixed;
         top: 90px;
         left: 5%;
-        width: 90%;
+        right: 5%;
         border-radius: 5px;
         background-color: var(--white);
         text-align: center;
-        padding: 20px 0;
-        pointer-events: none;
+        height: 0;
+        overflow: hidden;
         transition: all 0.3s;
+    }
+    #nav-menu li:first-child {
+        padding-top: 32px;
     }
     .navbar ul li {
         display: block;
@@ -391,17 +381,28 @@ footer li {
     .nav-link:hover::after {
         bottom: -20px;
     }
-    #menu {
+    #nav-background {
+        display: block;
         position: fixed;
-        width: 100vw;
         top: 80px;
-        bottom: 0;
         left: 0;
         right: 0;
         background: linear-gradient(hsla(233, 26%, 24%, 1), hsla(233, 26%, 24%, 0.2));
-        opacity: 0;
         transition: all 0.3s;
     } 
+    .show {
+        height: 265px;
+        z-index: 10;
+    }
+    .nav-bg {
+        bottom: 0;
+    }
+    .display-i-b {
+        display: inline-block;
+    }
+    .display-n {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 450px) {
